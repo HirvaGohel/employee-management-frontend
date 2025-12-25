@@ -1,56 +1,117 @@
+import { useState } from "react";
+import { NavLink } from "react-router-dom";
 import {
-  FaTachometerAlt,
+  FaHome,
   FaUsers,
   FaCalendarCheck,
   FaSignOutAlt,
 } from "react-icons/fa";
-import { getUser, logoutUser } from "../utils/auth";
-import { useNavigate } from "react-router-dom";
+import { ChevronDown } from "lucide-react";
+
+const menuLink =
+  "flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-gray-100 transition";
+
+const activeLink =
+  "bg-gray-200 font-semibold";
 
 export default function Sidebar() {
-  const user = getUser();
-  const navigate = useNavigate();
-
+  const [openDashboard, setOpenDashboard] = useState(true);
 
   return (
-    <div className="w-64 min-h-screen bg-gray-900 text-white p-5">
-      {/* User Info */}
-      <div className="mb-8 text-center">
-        <div className="w-16 h-16 bg-gray-700 rounded-full mx-auto flex items-center justify-center text-xl">
-          {user?.name?.charAt(0)}
+    <aside className="w-64 min-h-screen bg-white border-r p-4 sticky top-0">
+      
+      {/* LOGO */}
+      <h1 className="text-xl font-bold mb-6">DREAMLEO</h1>
+
+      {/* MAIN MENU */}
+      <p className="text-xs text-gray-400 uppercase mb-2">
+        Main Menu
+      </p>
+
+      {/* DASHBOARD (COLLAPSIBLE) */}
+      <div
+        onClick={() => setOpenDashboard(!openDashboard)}
+        className="flex items-center justify-between px-4 py-3 rounded-lg bg-gray-100 cursor-pointer"
+      >
+        <div className="flex items-center gap-3 font-medium">
+          <FaHome />
+          Dashboard
+          <span className="text-xs bg-red-500 text-white px-2 rounded">
+            Hot
+          </span>
         </div>
-        <h3 className="mt-3 font-bold">{user?.name}</h3>
-        <p className="text-xs text-gray-400">{user?.email}</p>
+        <ChevronDown
+          size={18}
+          className={`${openDashboard ? "rotate-180" : ""} transition`}
+        />
       </div>
 
-      {/* Menu */}
-      <nav className="space-y-3">
-        <MenuItem icon={<FaTachometerAlt />} text="Dashboard" onClick={() => navigate("/dashboard")} />
-        <MenuItem icon={<FaUsers />} text="Employees" onClick={() => navigate("/employees")} />
-        <MenuItem icon={<FaCalendarCheck />} text="Attendance" onClick={() => navigate("/attendance")} />
-        <MenuItem icon={<FaCalendarCheck />} text="Leave Approvals" onClick={() => navigate("/leave-approvals")} />
+      {/* DASHBOARD SUB MENU */}
+      {openDashboard && (
+        <div className="mt-2 space-y-1">
+          <NavLink
+            to="/admindashboard"
+            className={({ isActive }) =>
+              `pl-6 py-2 block text-sm rounded cursor-pointer
+              ${
+                isActive
+                  ? "text-orange-500 border-l-4 border-orange-500 bg-orange-50"
+                  : "text-gray-600 hover:bg-gray-100"
+              }`
+            }
+          >
+            AdminDashboard
+          </NavLink>
 
-        <button
-          onClick={() => {
-            logoutUser();
-            navigate("/");
-          }}
-          className="flex items-center gap-3 text-red-400 mt-6"
+          <NavLink
+            to="/employeedashboard"
+            className={({ isActive }) =>
+              `pl-6 py-2 block text-sm rounded cursor-pointer
+              ${
+                isActive
+                  ? "text-orange-500 border-l-4 border-orange-500 bg-orange-50"
+                  : "text-gray-600 hover:bg-gray-100"
+              }`
+            }
+          >
+            EmployeeDashboard
+          </NavLink>
+
+        </div>
+      )}
+
+      {/* OTHER MENU */}
+      <div className="mt-2 space-y-1">
+        <NavLink
+          to="/employees"
+          className={({ isActive }) =>
+            `${menuLink} ${isActive ? activeLink : ""}`
+          }
         >
-          <FaSignOutAlt /> Logout
-        </button>
-      </nav>
-    </div>
-  );
-}
+          <FaUsers />
+          Employees
+        </NavLink>
 
-function MenuItem({ icon, text, onClick }) {
-  return (
-    <button
-      onClick={onClick}
-      className="flex items-center gap-3 w-full text-left hover:text-blue-400"
-    >
-      {icon} {text}
-    </button>
+        <NavLink
+          to="/attendance"
+          className={({ isActive }) =>
+            `${menuLink} ${isActive ? activeLink : ""}`
+          }
+        >
+          <FaCalendarCheck />
+          Attendance
+        </NavLink>
+
+        <NavLink
+          to="/leave"
+          className={({ isActive }) =>
+            `${menuLink} ${isActive ? activeLink : ""}`
+          }
+        >
+          <FaSignOutAlt />
+          Leave
+        </NavLink>
+      </div>
+    </aside>
   );
 }

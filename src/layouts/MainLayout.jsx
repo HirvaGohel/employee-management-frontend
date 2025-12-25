@@ -6,7 +6,7 @@ export default function MainLayout({ children }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="flex">
+    <div className="flex relative min-h-screen">
       {/* Sidebar */}
       <div
         className={`fixed md:static z-40 ${
@@ -24,3 +24,6 @@ export default function MainLayout({ children }) {
     </div>
   );
 }
+
+
+

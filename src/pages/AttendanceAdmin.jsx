@@ -1,7 +1,11 @@
 import MainLayout from "../layouts/MainLayout";
 import { attendance } from "../data/attendance";
+import { nav } from "framer-motion/client";
+import { useNavigate } from "react-router-dom";
 
 export default function Attendance() {
+  const navigate = useNavigate();
+  navigate("/attendance-admin");
   return (
     <>
       <h1 className="text-2xl font-bold mb-4">My Attendance</h1>

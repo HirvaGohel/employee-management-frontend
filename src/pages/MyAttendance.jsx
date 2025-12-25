@@ -1,11 +1,3 @@
-import React from 'react'
-
-const MyAttendance = () => {
-  return (
-    <div>
-      
-    </div>
-  )
+export default function Attendance() {
+  return <h1>Attendance Page</h1>;
 }
-
-export default MyAttendance

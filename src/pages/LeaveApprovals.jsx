@@ -1,60 +1,31 @@
-import { useState } from "react";
+import React from "react";
 import { leaves } from "../data/leaves";
 
-export default function LeaveApprovals() {
-  const [data, setData] = useState(leaves);
-
-  const updateStatus = (id, status) => {
-    setData(data.map(l =>
-      l.id === id ? { ...l, status } : l
-    ));
-  };
-
+export default function LeaveCard() {
   return (
-    <>
-      <h1 className="text-2xl font-bold mb-6">Leave Approvals</h1>
+    <div className="bg-white rounded-xl shadow p-5" 
+         style={{ height: "500px" }}>
+      <h3 className="font-semibold mb-4">Leave Details</h3>
 
-      <div className="bg-white rounded-xl shadow overflow-x-auto">
-        <table className="w-full text-sm">
-          <thead className="bg-gray-100 text-gray-700">
-            <tr>
-              <th className="p-4 text-left">Employee</th>
-              <th className="p-4">From</th>
-              <th className="p-4">To</th>
-              <th className="p-4">Reason</th>
-              <th className="p-4">Status</th>
-              <th className="p-4">Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {data.map(leave => (
-              <tr key={leave.id} className="border-t">
-                <td className="p-4">{leave.employee}</td>
-                <td className="p-4">{leave.from}</td>
-                <td className="p-4">{leave.to}</td>
-                <td className="p-4">{leave.reason}</td>
-                <td className="p-4 font-semibold">
-                  {leave.status}
-                </td>
-                <td className="p-4 space-x-2">
-                  <button
-                    onClick={() => updateStatus(leave.id, "Approved")}
-                    className="px-3 py-1 bg-green-500 text-white rounded"
-                  >
-                    Approve
-                  </button>
-                  <button
-                    onClick={() => updateStatus(leave.id, "Rejected")}
-                    className="px-3 py-1 bg-red-500 text-white rounded"
-                  >
-                    Reject
-                  </button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+      <div className="grid grid-cols-2 gap-4 text-sm">
+        <Stat label="Total Leaves" value="16" />
+        <Stat label="Taken" value="10" />
+        <Stat label="Absent" value="2" />
+        <Stat label="Loss of Pay" value="2" />
       </div>
-    </>
+
+      <button className="mt-5 w-full bg-black text-white py-2 rounded-lg">
+        Leave Application
+      </button>
+    </div>
+  );
+}
+
+function Stat({ label, value }) {
+  return (
+    <div>
+      <p className="text-gray-500">{label}</p>
+      <p className="text-xl font-bold">{value}</p>
+    </div>
   );
 }

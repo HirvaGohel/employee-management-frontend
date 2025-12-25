@@ -2,6 +2,7 @@ import React from 'react'
 import { employees } from "../data/employee";
 
 const EmployeesList = () => {
+
   return (
     <>
       <h1 className="text-2xl font-bold mb-4">Employees</h1>

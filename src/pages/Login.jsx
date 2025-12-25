@@ -1,133 +1,130 @@
-import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
-import { FaUserShield, FaUserTie } from "react-icons/fa";
+import { nav } from "framer-motion/client";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
 export default function Login() {
-  const navigate = useNavigate();
-
-  const [role, setRole] = useState("admin");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [remember, setRemember] = useState(false);
-  const [theme, setTheme] = useState("dark");
+ const navigate = useNavigate();   // ✅ correct hook
 
-  // 🌗 Auto theme detect
-  useEffect(() => {
-    const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
-      ? "dark"
-      : "light";
-    setTheme(systemTheme);
-  }, []);
-
-  // 🔐 LOGIN LOGIC (Backend Ready)
-  const handleLogin = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-
-    const userData = {
-      email,
-      role,
-      token: "FAKE_JWT_TOKEN",
-    };
-
-    if (remember) {
-      localStorage.setItem("user", JSON.stringify(userData));
-    } else {
-      sessionStorage.setItem("user", JSON.stringify(userData));
-    }
-
-    // 🎯 Redirect by role
-    role === "admin"
-      ? navigate("/admin-dashboard")
-      : navigate("/dashboard");
+    navigate("/dashboard");
   };
 
   return (
-    <div className={`${theme === "dark" ? "dark" : ""}`}>
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-gray-900 to-black dark:text-white">
+    <div className="min-h-screen grid md:grid-cols-2 bg-[#fff7f2]">
+      
+      {/* LEFT SECTION */}
+      <div className="hidden md:flex items-center justify-center bg-gradient-to-b from-black to-black p-10">
+        <div className="bg-white/20 backdrop-blur-lg rounded-3xl p-10 max-w-md text-white">
+          <h1 className="text-4xl font-bold leading-tight mb-6">
+            Empowering people through seamless HR management.
+          </h1>
 
-        {/* Glow */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(59,130,246,0.15),transparent_60%)]"></div>
+          <img
+            src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d"
+            alt="Team"
+            className="rounded-xl mb-6"
+          />
 
-        {/* Card */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6 }}
-          className="relative w-full max-w-md p-8 rounded-2xl 
-          bg-white/10 backdrop-blur-xl shadow-2xl border border-white/10"
-        >
-          <h2 className="text-3xl font-semibold text-center mb-6">
-            Secure Login
-          </h2>
+          <p className="text-sm opacity-90">
+            Efficiently manage your workforce, streamline operations effortlessly.
+          </p>
+        </div>
+      </div>
 
-          {/* Role Switch */}
-          <div className="flex justify-center gap-3 mb-6">
-            <button
-              onClick={() => setRole("admin")}
-              className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium
-              ${role === "admin" ? "bg-blue-600 text-white" : "bg-gray-700 text-gray-300"}`}
-            >
-              <FaUserShield /> Admin
-            </button>
-
-            <button
-              onClick={() => setRole("employee")}
-              className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium
-              ${role === "employee" ? "bg-blue-600 text-white" : "bg-gray-700 text-gray-300"}`}
-            >
-              <FaUserTie /> Employee
-            </button>
+      {/* RIGHT SECTION */}
+      <div className="flex items-center justify-center px-6">
+        <div className="w-full max-w-md">
+          
+          {/* Logo */}
+          <div className="flex justify-center mb-6">
+            <h2 className="text-3xl font-bold text-gray-800">DREAMLEO</h2>
           </div>
 
-          {/* Form */}
-          <form onSubmit={handleLogin} className="space-y-5">
-            <input
-              type="email"
-              placeholder="Email"
-              className="w-full rounded-lg bg-gray-900/70 border border-gray-700 px-4 py-3 focus:ring-2 focus:ring-blue-500"
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
+          <h3 className="text-3xl font-bold text-gray-900 text-center mb-2">
+            Sign In
+          </h3>
+          <p className="text-center text-gray-500 mb-8">
+            Please enter your details to sign in
+          </p>
 
-            <input
-              type="password"
-              placeholder="Password"
-              className="w-full rounded-lg bg-gray-900/70 border border-gray-700 px-4 py-3 focus:ring-2 focus:ring-blue-500"
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
-
-            {/* Remember + Forgot */}
-            <div className="flex justify-between items-center text-sm text-gray-400">
-              <label className="flex items-center gap-2">
-                <input
-                  type="checkbox"
-                  checked={remember}
-                  onChange={() => setRemember(!remember)}
-                />
-                Remember me
+          <form onSubmit={handleSubmit} className="space-y-5">
+            
+            {/* Email */}
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Email Address
               </label>
+              <input
+                type="email"
+                placeholder="example@email.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
+                required
+              />
+            </div>
 
-              <button type="button" className="hover:text-blue-400">
-                Forgot password?
-              </button>
+            {/* Password */}
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-1">
+                Password
+              </label>
+              <input
+                type="password"
+                placeholder="********"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
+                required
+              />
+            </div>
+
+            {/* Remember / Forgot */}
+            <div className="flex justify-between items-center text-sm">
+              <label className="flex items-center gap-2 text-gray-600">
+                <input type="checkbox" />
+                Remember Me
+              </label>
+              <span className="text-red-500 cursor-pointer">
+                Forgot Password?
+              </span>
             </div>
 
             {/* Button */}
-            <motion.button
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
-              className="w-full py-3 rounded-lg bg-blue-600 hover:bg-blue-700 transition font-medium text-white shadow-lg"
-            >
-              Login as {role}
-            </motion.button>
+            <button
+              type="submit"
+              className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
+              Sign In
+            </button>
+
+            {/* Register */}
+            <p className="text-center text-sm text-gray-600">
+              Don’t have an account?{" "}
+              <span className="text-black cursor-pointer font-medium">
+                Create Account
+              </span>
+            </p>
+
+            {/* Social */}
+            <div className="flex items-center gap-4">
+              <button className="flex-1 bg-blue-600 text-white py-2 rounded-lg">
+                Facebook
+              </button>
+              <button className="flex-1 border py-2 rounded-lg">
+                Google
+              </button>
+              <button className="flex-1 bg-black text-white py-2 rounded-lg">
+                Apple
+              </button>
+            </div>
           </form>
 
-          <p className="text-xs text-center text-gray-400 mt-6">
-            Employee Management System
+          <p className="text-center text-xs text-gray-600 mt-8">
+            Copyright © 2025 - SmartHR
           </p>
-        </motion.div>
+        </div>
       </div>
     </div>
   );
