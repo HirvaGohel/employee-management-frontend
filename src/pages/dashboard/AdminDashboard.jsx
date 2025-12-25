@@ -10,8 +10,8 @@ import {
   FaUserTie,
 } from "react-icons/fa";
 
-/* ================= ADMIN DASHBOARD ================= */
 
+/* ================= ADMIN DASHBOARD ================= */
 export default function AdminDashboard() {
   return (
     <div>
@@ -110,7 +110,6 @@ export default function AdminDashboard() {
             from last week
           </p>
         </div>
-
 
         <div className="grid grid-cols-3 gap-6 col-span-16 xl:col-span-12 mt-2">
       {/* JOBS APPLICANTS */}
