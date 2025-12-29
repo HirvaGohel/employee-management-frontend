@@ -85,9 +85,6 @@ export default function Navbar() {
                 <FaUser /> My Profile
               </li>
 
-              <li className="flex items-center gap-3 px-3 py-2 rounded hover:bg-gray-100 cursor-pointer">
-                <FaRegClock /> Activity Log
-              </li>
 
               <li className="flex items-center gap-3 px-3 py-2 rounded hover:bg-gray-100 cursor-pointer">
                 <FaCog /> Settings
@@ -99,10 +96,6 @@ export default function Navbar() {
 
               <li className="flex items-center gap-3 px-3 py-2 rounded hover:bg-gray-100 cursor-pointer">
                 <FaRegClock /> My Account
-              </li>
-
-              <li className="flex items-center gap-3 px-3 py-2 rounded hover:bg-gray-100 cursor-pointer">
-                <FaRegClock /> Knowledge Base
               </li>
 
               <li className="border-t mt-2 pt-2">

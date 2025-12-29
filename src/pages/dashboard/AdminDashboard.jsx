@@ -8,9 +8,8 @@ import {
   FaChartLine,
   FaUserPlus,
   FaUserTie,
-} from "react-icons/fa";
-
-
+} from "react-icons/fa"; 
+ 
 /* ================= ADMIN DASHBOARD ================= */
 export default function AdminDashboard() {
   return (
@@ -29,16 +28,16 @@ export default function AdminDashboard() {
           />
 
           <div>
-            <h2 className="text-xl font-semibold text-gray-900 flex items-center gap-2">
+            <h2 className="text-xl font-bold text-gray-900 flex items-center gap-2"> 
               Welcome Back, Adrian
               <span className="text-gray-400 cursor-pointer">✏️</span>
             </h2>
 
             <p className="text-sm text-gray-600 mt-1">
               You have{" "}
-              <span className="text-orange-500 font-semibold">21</span>{" "}
+              <span className="text-black font-semibold">21</span>{" "}
               Pending Approvals &{" "}
-              <span className="text-orange-500 font-semibold">14</span>{" "}
+              <span className="text-black font-semibold">14</span>{" "}
               Leave Requests
             </p>
           </div>
@@ -124,7 +123,7 @@ export default function AdminDashboard() {
         {/* Tabs */}
         <div className="flex m-4 bg-gray-200 rounded-lg overflow-hidden">
           <button className="w-1/2 py-2 text-sm">Openings</button>
-          <button className="w-1/2 py-2 text-sm bg-orange-500 text-white">
+          <button className="w-1/2 py-2 text-sm bg-blue-500 text-white">
             Applicants
           </button>
         </div>
@@ -298,3 +297,4 @@ function TodoItem({ text }) {
     </div>
   );
 }
+          

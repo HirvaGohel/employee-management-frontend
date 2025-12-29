@@ -29,6 +29,8 @@ export default function EmployeeDashboard() {
           <div className="mt-6 grid md:grid-cols-1 lg:grid-cols-1 gap-6">
             <Project />
           </div>
+
+          
         </div>
   );
 }

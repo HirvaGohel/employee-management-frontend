@@ -55,21 +55,21 @@ export default function Sidebar() {
               `pl-6 py-2 block text-sm rounded cursor-pointer
               ${
                 isActive
-                  ? "text-orange-500 border-l-4 border-orange-500 bg-orange-50"
-                  : "text-gray-600 hover:bg-gray-100"
+                  ? "border-l-4 bg-orange-50"
+                  : "text-gray-600 hover:bg--100"
               }`
             }
           >
             AdminDashboard
           </NavLink>
-
+            
           <NavLink
             to="/employeedashboard"
             className={({ isActive }) =>
               `pl-6 py-2 block text-sm rounded cursor-pointer
               ${
                 isActive
-                  ? "text-orange-500 border-l-4 border-orange-500 bg-orange-50"
+                  ? "border-l-4 bg-orange-50"
                   : "text-gray-600 hover:bg-gray-100"
               }`
             }
@@ -115,3 +115,4 @@ export default function Sidebar() {
     </aside>
   );
 }
+
