@@ -53,7 +53,7 @@ const holidaysData = [
     },
     {
     id: 8,
-    title: "Dassera",
+    title: "Dussehra (Vijayadashami)",
     date: "10 oct 2026",
     description: "Festival of lights celebrated across India",
     status: "Active",
@@ -67,7 +67,7 @@ const holidaysData = [
     },
     {
     id: 10,
-    title: "Hindu New Year",
+    title: "Hindu New Year (Bestu Varas)",
     date: "10 Nov 2026",
     description: "Celebrating the start of the Hindu lunar calendar",
     status: "Active",
