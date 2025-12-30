@@ -13,25 +13,25 @@ import {
 const stats = [
   {
     title: "Total Employee",
-    value: "1007",
+    value: "10",
     icon: <FaUsers />,
     bg: "bg-gray-900",
   },
   {
     title: "Active",
-    value: "1007",
+    value: "10",
     icon: <FaUserCheck />,
     bg: "bg-green-500",
   },
   {
     title: "InActive",
-    value: "30",
+    value: "02",
     icon: <FaUserTimes />,
     bg: "bg-red-500",
   },
   {
     title: "New Joiners",
-    value: "67",
+    value: "01",
     icon: <FaUserPlus />,
     bg: "bg-blue-500",
   },

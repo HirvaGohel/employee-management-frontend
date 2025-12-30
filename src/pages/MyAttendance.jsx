@@ -160,8 +160,8 @@ export default function AttendanceDashboard() {
               ))}
             </div>
           </div>
-
         </div>
+        
       </div>
     </div>
   );

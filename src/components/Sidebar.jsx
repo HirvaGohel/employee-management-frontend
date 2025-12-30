@@ -111,6 +111,17 @@ export default function Sidebar() {
           <FaSignOutAlt />
           Leave
         </NavLink>
+
+        
+        <NavLink
+          to="/holidays"
+          className={({ isActive }) =>
+            `${menuLink} ${isActive ? activeLink : ""}`
+          }
+        >
+          <FaSignOutAlt />
+          Holidays
+        </NavLink>
       </div>
     </aside>
   );
