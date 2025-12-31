@@ -7,7 +7,7 @@ const SummaryCard = ({ color, title, value }) => {
         <span className="w-8 h-8 bg-white/30 rounded-full"></span>
       </div>
       <div className="p-5 flex flex-col justify-center">
-        <p className="text-gray-500 text-sm">{title}</p>
+        <p className="text-black text-sm">{title}</p>
         <h3 className="text-xl font-bold">{value}</h3>
       </div>
     </div>
@@ -22,8 +22,8 @@ export default function Leaves() {
       <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
         <div>
           <h1 className="text-2xl font-bold text-gray-800">Leaves</h1>
-          <p className="text-sm text-gray-500 mt-1">
-            Home / Employee / <span className="text-gray-800">Leaves</span>
+          <p className="text-sm text-black mt-1">
+            Home / Employee / <span className="text-black">Leaves</span>
           </p>
         </div>
 
@@ -33,7 +33,7 @@ export default function Leaves() {
             Export
           </button>
 
-          <button className="flex items-center gap-2 bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg">
+          <button className="flex items-center gap-2 bg-black hover:bg-orange-600 text-white px-4 py-2 rounded-lg">
             <FaPlus />
             Add Leave
           </button>

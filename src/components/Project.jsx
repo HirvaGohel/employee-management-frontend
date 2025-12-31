@@ -78,10 +78,10 @@ function ProjectCard({ project }) {
           className="w-10 h-10 rounded-full object-cover"
         />
         <div>
-          <p className="font-medium text-gray-900">
+          <p className="font-medium text-black">
             {project.leader}
           </p>
-          <p className="text-sm text-gray-500">
+          <p className="text-sm text-black">
             {project.role}
           </p>
         </div>
@@ -89,14 +89,14 @@ function ProjectCard({ project }) {
 
       {/* Deadline */}
       <div className="flex items-center gap-3 mb-4">
-        <div className="w-10 h-10 flex items-center justify-center rounded-full bg-orange-100 text-orange-600">
+        <div className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 text-black">
           <FaCalendarAlt />
         </div>
         <div>
           <p className="font-medium text-gray-900">
             {project.deadline}
           </p>
-          <p className="text-sm text-gray-500">Deadline</p>
+          <p className="text-sm text-black">Deadline</p>
         </div>
       </div>
 
@@ -106,7 +106,7 @@ function ProjectCard({ project }) {
           <div className="w-8 h-8 flex items-center justify-center rounded-full bg-green-100 text-green-600">
             <FaTasks />
           </div>
-          <span>
+          <span className="text-black">
             Tasks :{" "}
             <strong>
               {project.tasksDone}/{project.tasksTotal}
@@ -124,7 +124,7 @@ function ProjectCard({ project }) {
             src="https://randomuser.me/api/portraits/men/13.jpg"
             className="w-7 h-7 rounded-full border"
           />
-          <span className="w-7 h-7 flex items-center justify-center rounded-full bg-orange-500 text-white text-xs border">
+          <span className="w-7 h-7 flex items-center justify-center rounded-full bg-black text-white text-xs border">
             +2
           </span>
         </div>
@@ -132,7 +132,7 @@ function ProjectCard({ project }) {
 
       {/* Time Spent */}
       <div className="bg-gray-200 rounded-lg p-3 flex justify-between text-sm">
-        <span className="text-gray-700">Time Spent</span>
+        <span className="text-black">Time Spent</span>
         <span className="font-semibold text-gray-900">
           {project.timeSpent}/{project.timeTotal} Hrs
         </span>

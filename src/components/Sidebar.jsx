@@ -5,8 +5,15 @@ import {
   FaUsers,
   FaCalendarCheck,
   FaSignOutAlt,
+  FaAngleDown,
+  FaAirFreshener,
+  FaAffiliatetheme,
+  FaPauseCircle,
+  FaPaw,
+  FaProjectDiagram,
 } from "react-icons/fa";
 import { ChevronDown } from "lucide-react";
+import { Fa1, FaAvianex, FaPause } from "react-icons/fa6";
 
 const menuLink =
   "flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-gray-100 transition";
@@ -21,7 +28,7 @@ export default function Sidebar() {
     <aside className="w-64 min-h-screen bg-white border-r p-4 sticky top-0">
       
       {/* LOGO */}
-      <h1 className="text-xl font-bold mb-6">DREAMLEO</h1>
+      <h1 className="text-xl font-bold mb-6 text-center">DREAMLEO</h1>
 
       {/* MAIN MENU */}
       <p className="text-xs text-gray-400 uppercase mb-2">
@@ -36,9 +43,6 @@ export default function Sidebar() {
         <div className="flex items-center gap-3 font-medium">
           <FaHome />
           Dashboard
-          <span className="text-xs bg-red-500 text-white px-2 rounded">
-            Hot
-          </span>
         </div>
         <ChevronDown
           size={18}
@@ -111,7 +115,6 @@ export default function Sidebar() {
           <FaSignOutAlt />
           Leave
         </NavLink>
-
         
         <NavLink
           to="/holidays"
@@ -119,9 +122,30 @@ export default function Sidebar() {
             `${menuLink} ${isActive ? activeLink : ""}`
           }
         >
-          <FaSignOutAlt />
+          <FaAvianex />
           Holidays
         </NavLink>
+
+         <NavLink
+          to="/jobs"
+          className={({ isActive }) =>
+            `${menuLink} ${isActive ? activeLink : ""}`
+          }
+        >
+          <FaAffiliatetheme />
+          Jobs
+        </NavLink> 
+
+        <NavLink
+          to="/projects"
+          className={({ isActive }) =>
+            `${menuLink} ${isActive ? activeLink : ""}`
+          }
+        >
+          <FaProjectDiagram />
+          Projects
+        </NavLink>
+
       </div>
     </aside>
   );

@@ -84,7 +84,7 @@ const holidaysData = [
     title: "Christmas",
     date: "25 Dec 2026",
     description: "Celebrating the birth of Jesus Christ",
-    status: "Active",
+    status: "Unactive",
     } 
 
 ];
@@ -102,12 +102,12 @@ export default function Holidays() {
       <div className="flex items-center justify-between mb-6">
         <div>
           <h1 className="text-2xl font-bold">Holidays</h1>
-          <p className="text-sm text-gray-500">
+          <p className="text-sm text-black">
             Employee / Holidays
           </p>
         </div>
 
-        <button className="bg-orange-500 text-white px-4 py-2 rounded-lg flex items-center gap-2">
+        <button className="bg-black text-white px-4 py-2 rounded-lg flex items-center gap-2">
           <FaPlus />
           Add Holiday
         </button>
@@ -151,8 +151,8 @@ export default function Holidays() {
                     <input type="checkbox" />
                   </td>
                   <td className="p-3 font-medium">{holiday.title}</td>
-                  <td className="p-3 text-gray-600">{holiday.date}</td>
-                  <td className="p-3 text-gray-600">
+                  <td className="p-3 text-black">{holiday.date}</td>
+                  <td className="p-3 text-black">
                     {holiday.description}
                   </td>
                   <td className="p-3">
@@ -179,12 +179,12 @@ export default function Holidays() {
         </div>
 
         {/* FOOTER */}
-        <div className="flex items-center justify-between p-4 text-sm text-gray-600">
+        <div className="flex items-center justify-between p-4 text-sm text-black">
           <p>Showing 1 - {filteredHolidays.length} of {filteredHolidays.length} entries</p>
 
           <div className="flex items-center gap-2">
             <button className="px-3 py-1 border rounded">&lt;</button>
-            <button className="px-3 py-1 bg-orange-500 text-white rounded">1</button>
+            <button className="px-3 py-1 bg-black text-white rounded">1</button>
             <button className="px-3 py-1 border rounded">&gt;</button>
           </div>
         </div>

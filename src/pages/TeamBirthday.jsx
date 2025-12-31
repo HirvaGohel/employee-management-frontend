@@ -27,7 +27,7 @@ export default function RightSidebar() {
           IOS Developer
         </p>
 
-        <button className="bg-orange-500 px-5 py-2 rounded-lg text-sm font-medium relative z-10 hover:opacity-90">
+        <button className="bg-white text-black px-5 py-2 rounded-lg text-sm font-medium relative z-10 hover:opacity-90">
           Send Wishes
         </button>
       </div>
@@ -35,7 +35,7 @@ export default function RightSidebar() {
       {/* Leave Policy */}
       <div className="bg-[#3B6F7E] rounded-xl shadow p-5 flex justify-between items-center text-white">
         <div>
-          <h3 className="font-semibold text-lg">Leave Policy</h3>
+          <h3 className="font-bold text-lg">Leave Policy</h3>
           <p className="text-sm opacity-90">
             Last Updated : Today
           </p>
@@ -47,12 +47,12 @@ export default function RightSidebar() {
       </div>
 
       {/* Next Holiday */}
-      <div className="bg-yellow-400 rounded-xl shadow p-5 flex justify-between items-center">
+      <div className="bg-yellow-500 rounded-xl shadow p-5 flex justify-between items-center">
         <div>
-          <h3 className="font-semibold text-lg text-gray-900">
+          <h3 className="font-bold text-lg text-white">
             Next Holiday
           </h3>
-          <p className="text-gray-800 text-sm">
+          <p className="text-white text-sm">
             Diwali, 15 Sep 2025
           </p>
         </div>

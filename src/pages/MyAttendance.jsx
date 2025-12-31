@@ -10,7 +10,7 @@ const StatCard = ({ icon, value, label, percent, up }) => (
       {value}
     </h2>
 
-    <p className="text-gray-500 text-sm">{label}</p>
+    <p className="text-black text-sm">{label}</p>
 
     <div className="flex items-center gap-2 text-sm">
       <span
@@ -20,7 +20,7 @@ const StatCard = ({ icon, value, label, percent, up }) => (
       >
         {up ? <FaArrowUp size={12} /> : <FaArrowDown size={12} />}
       </span>
-      <span className="text-gray-600">{percent}</span>
+      <span className="text-black">{percent}</span>
     </div>
   </div>
 );
@@ -33,7 +33,7 @@ export default function AttendanceDashboard() {
         {/* LEFT ATTENDANCE CARD */}
         <div className="xl:col-span-1 bg-orange-50 border border-orange-200 rounded-xl p-6 flex flex-col items-center gap-5">
           <div className="text-center">
-            <p className="text-gray-500">Attendance</p>
+            <p className="text-black">Attendance</p>
             <h3 className="text-lg font-semibold">
               08:35 AM, 11 Mar 2025
             </h3>
@@ -54,7 +54,7 @@ export default function AttendanceDashboard() {
                 cx="80"
                 cy="80"
                 r="70"
-                stroke="#22c55e"
+                stroke="#61cadaff"
                 strokeWidth="10"
                 fill="none"
                 strokeDasharray="440"
@@ -64,7 +64,7 @@ export default function AttendanceDashboard() {
             </svg>
 
             <div className="absolute inset-0 flex flex-col items-center justify-center">
-              <p className="text-sm text-gray-500">Total Hours</p>
+              <p className="text-sm text-black">Total Hours</p>
               <h3 className="font-bold text-lg">5:45:32</h3>
             </div>
           </div>
@@ -73,11 +73,11 @@ export default function AttendanceDashboard() {
             Production : 3.45 hrs
           </span>
 
-          <p className="text-sm text-orange-600 flex items-center gap-2">
+          <p className="text-sm text-green-500 flex items-center gap-2">
             <FaClock /> Punch In at 10.00 AM
           </p>
 
-          <button className="w-full bg-orange-500 hover:bg-orange-600 text-white py-3 rounded-lg font-semibold">
+          <button className="w-full bg-red-500 hover:bg-orange-600 text-white py-3 rounded-lg font-semibold">
             Punch Out
           </button>
         </div>
@@ -130,7 +130,7 @@ export default function AttendanceDashboard() {
               </div>
               <div>
                 <p className="text-gray-500 text-yellow-500">Break hours</p>
-                <h3 className="font-bold text-xl">22m 15s</h3>
+                <h3 className="font-bold text-xl">45m 15s</h3>
               </div>
               <div>
                 <p className="text-gray-500 text-blue-600">Overtime</p>
@@ -145,12 +145,12 @@ export default function AttendanceDashboard() {
               <div className="h-6 bg-green-500 rounded-lg w-[30%]"></div>
               <div className="h-6 bg-yellow-400 rounded-lg w-[15%]"></div>
               <div className="h-6 bg-green-500 rounded-lg w-[20%]"></div>
-              <div className="h-6 bg-blue-500 rounded-lg w-[5%]"></div>
-              <div className="h-6 bg-blue-500 rounded-lg w-[5%]"></div>
+              <div className="h-6 bg-pink-500 rounded-lg w-[5%]"></div>
+              <div className="h-6 bg-pink-500 rounded-lg w-[5%]"></div>
             </div>
 
             {/* TIME SCALE */}
-            <div className="flex justify-between text-xs text-gray-500 mt-4">
+            <div className="flex justify-between text-xs text-black mt-4">
               {[
                 "06:00","07:00","08:00","09:00","10:00","11:00",
                 "12:00","01:00","02:00","03:00","04:00","05:00",

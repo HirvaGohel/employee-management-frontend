@@ -9,13 +9,13 @@ export default function ProfileCard() {
         />
         <div>
           <h3 className="font-bold text-lg">Stephan Peralt</h3>
-          <p className="text-sm text-gray-500">
+          <p className="text-lg text-black">
             Senior Product Designer
           </p>
         </div>
       </div>
 
-      <div className="mt-4 text-sm space-y-2">
+      <div className="mt-4 text-lg space-y-4">
         <p><strong>Email:</strong> steperd124@example.com</p>
         <p><strong>Phone:</strong> +1 324 3453 545</p>
         <p><strong>Joined:</strong> 15 Jan 2024</p>

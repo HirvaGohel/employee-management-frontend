@@ -45,11 +45,11 @@ export default function AdminDashboard() {
 
         {/* RIGHT */}
         <div className="flex items-center gap-3">
-          <button className="flex items-center gap-2 bg-teal-700 text-white px-4 py-2 rounded-lg text-sm font-medium">
+          <button className="flex items-center gap-2 bg-teal-500 text-white px-4 py-2 rounded-lg text-sm font-medium">
             <FaPlus size={12} /> Add Project
           </button>
 
-          <button className="flex items-center gap-2 bg-orange-500 text-white px-4 py-2 rounded-lg text-sm font-medium">
+          <button className="flex items-center gap-2 bg-black text-white px-4 py-2 rounded-lg text-sm font-medium">
             <FaPlus size={12} /> Add Requests
           </button>
         </div>
@@ -78,7 +78,7 @@ export default function AdminDashboard() {
       <div className="mt-6 grid grid-cols-12 gap-6">
 
         {/* LEFT STATS GRID */}
-        <div className="col-span-12 xl:col-span-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="col-span-12 xl:col-span-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-black">
 
           <StatCard icon={<FaCalendarCheck />} title="Attendance" value="92/99" change="+2.1%" positive />
           <StatCard icon={<FaProjectDiagram />} title="Total Projects" value="90/94" change="-2.1%" />
@@ -123,7 +123,7 @@ export default function AdminDashboard() {
         {/* Tabs */}
         <div className="flex m-4 bg-gray-200 rounded-lg overflow-hidden">
           <button className="w-1/2 py-2 text-sm">Openings</button>
-          <button className="w-1/2 py-2 text-sm bg-blue-500 text-white">
+          <button className="w-1/2 py-2 text-sm bg-black text-white">
             Applicants
           </button>
         </div>
@@ -186,7 +186,7 @@ export default function AdminDashboard() {
           <h3 className="font-semibold">Todo</h3>
           <div className="flex items-center gap-2">
             <button className="border px-3 py-1 rounded text-sm">Today</button>
-            <button className="bg-orange-500 text-white p-2 rounded-full">
+            <button className="bg-black text-white p-2 rounded-full">
               <FaPlus size={12} />
             </button>
           </div>
@@ -213,7 +213,7 @@ export default function AdminDashboard() {
 function StatCard({ icon, title, value, change, positive }) {
   return (
     <div className="bg-white rounded-xl shadow-sm p-5">
-      <div className="w-12 h-12 flex items-center justify-center rounded-full bg-orange-100 text-orange-500 mb-4">
+      <div className="w-12 h-12 flex items-center justify-center rounded-full bg-gray-100 text-black mb-4">
         {icon}
       </div>
 
@@ -240,7 +240,7 @@ function DepartmentBar({ label, value }) {
         <span>{value}</span>
       </div>
       <div className="w-full h-2 bg-gray-200 rounded-full">
-        <div className="h-2 bg-orange-500 rounded-full" style={{ width: `${value}%` }} />
+        <div className="h-2 bg-black rounded-full" style={{ width: `${value}%` }} />
       </div>
     </div>
     

@@ -63,7 +63,7 @@ export default function TeamMembers() {
                 <h4 className="font-semibold text-gray-900">
                   {member.name}
                 </h4>
-                <p className="text-sm text-gray-500">
+                <p className="text-sm text-black">
                   {member.role}
                 </p>
               </div>
@@ -85,7 +85,7 @@ export default function TeamMembers() {
 /* Icon Button */
 function IconButton({ icon }) {
   return (
-    <button className="w-9 h-9 flex items-center justify-center rounded-lg border hover:bg-gray-100 text-gray-600">
+    <button className="w-9 h-9 flex items-center justify-center rounded-lg border hover:bg-gray-100 text-black">
       {icon}
     </button>
   );

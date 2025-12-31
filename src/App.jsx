@@ -9,6 +9,8 @@ import Dashboard from "./pages/dashboard/Dashboard";
 import LeavePolicy from "./components/LeavePolicy";
 import AdminDashboard from "./pages/dashboard/AdminDashboard";
 import Holidays from "./components/Holidays";
+import Jobs from "./pages/Jobs";
+import Projects from "./pages/Projects";
 
 export default function App() {
   return (
@@ -24,6 +26,8 @@ export default function App() {
       <Route path="/admindashboard" element={<MainLayout><AdminDashboard /></MainLayout>} />
       <Route path="/employeedashboard" element={<MainLayout><EmployeeDashboard /></MainLayout>} />
       <Route path="/holidays" element={<MainLayout><Holidays /></MainLayout>} />
+      <Route path="/jobs" element={<MainLayout><Jobs /></MainLayout>} />
+      <Route path="/projects" element={<MainLayout><Projects /></MainLayout>} />
     </Routes>
   );
 }

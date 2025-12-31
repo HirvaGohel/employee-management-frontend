@@ -100,7 +100,7 @@ export default function EmployeeList() {
             className="bg-white rounded-xl p-5 shadow-sm flex justify-between items-center"
           >
             <div>
-              <p className="text-sm text-gray-500">{item.title}</p>
+              <p className="text-sm text-black">{item.title}</p>
               <h2 className="text-xl font-bold">{item.value}</h2>
             </div>
             <div
@@ -212,7 +212,7 @@ export default function EmployeeList() {
           <button className="p-2 border rounded">
             <FaChevronLeft />
           </button>
-          <button className="px-3 py-1 bg-orange-500 text-white rounded">
+          <button className="px-3 py-1 bg-black text-white rounded">
             1
           </button>
           <button className="p-2 border rounded">
